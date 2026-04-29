@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Government Scheme Finder</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&family=Nunito:wght@400;500;600&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <header>
+        <div class="header-inner">
+            <div class="header-emblem">🇮🇳</div>
+            <div class="header-text">
+                <h1>Government Scheme Finder</h1>
+                <p>Find Central and State schemes you are eligible for — instantly</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="stats-bar">
+        <div class="stats-bar-inner">
+            <div class="stat-item">📋 <span>25+ Schemes Listed</span></div>
+            <div class="stat-item">🏛️ <span>Central and State Schemes</span></div>
+            <div class="stat-item">🎯 <span>Personalized Results</span></div>
+            <div class="stat-item">🆓 <span>Free to Use</span></div>
+        </div>
+    </div>
+
+    <main>
+
+        <div class="filter-card">
+            <h2> Find Schemes For You</h2>
+
+            <div class="filter-grid">
+
+                <div class="filter-group">
+                    <label>Your Age</label>
+                    <input type="number" id="age" placeholder="e.g. 28" min="1" max="120" />
+                </div>
+
+                <div class="filter-group">
+                    <label>Annual Income (₹)</label>
+                    <select id="income">
+                        <option value="">Select income range</option>
+                        <option value="0-50000">Below ₹50,000</option>
+                        <option value="50000-100000">₹50,000 – ₹1,00,000</option>
+                        <option value="100000-200000">₹1,00,000 – ₹2,00,000</option>
+                        <option value="200000-500000">₹2,00,000 – ₹5,00,000</option>
+                        <option value="500000+">Above ₹5,00,000</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>State</label>
+                    <select id="state">
+                        <option value="">All States</option>
+                        <option value="all">All India (Central)</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="West Bengal">West Bengal</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                        <option value="Bihar">Bihar</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Kerala">Kerala</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>Gender</label>
+                    <select id="gender">
+                        <option value="">Any</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>Occupation</label>
+                    <select id="occupation">
+                        <option value="">Any</option>
+                        <option value="farmer">Farmer</option>
+                        <option value="student">Student</option>
+                        <option value="labour">Daily Wage Labour</option>
+                        <option value="small-business">Small Business Owner</option>
+                        <option value="unemployed">Unemployed</option>
+                        <option value="pregnant">Pregnant / New Mother</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>Category</label>
+                    <select id="caste">
+                        <option value="">Any</option>
+                        <option value="sc">SC (Scheduled Caste)</option>
+                        <option value="st">ST (Scheduled Tribe)</option>
+                        <option value="obc">OBC</option>
+                        <option value="general">General</option>
+                        <option value="minority">Minority</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="filter-actions">
+                <button class="btn-find" onclick="findSchemes()">🔍 Find Schemes</button>
+                <button class="btn-reset" onclick="resetFilters()">✕ Reset</button>
+            </div>
+        </div>
+
+        <div class="category-pills">
+            <div class="pill all active"         onclick="filterByCategory('all', this)">🗂️ All</div>
+            <div class="pill agriculture"         onclick="filterByCategory('agriculture', this)">🌾 Agriculture</div>
+            <div class="pill housing"             onclick="filterByCategory('housing', this)">🏠 Housing</div>
+            <div class="pill health"              onclick="filterByCategory('health', this)">🏥 Health</div>
+            <div class="pill education"           onclick="filterByCategory('education', this)">📚 Education</div>
+            <div class="pill finance"             onclick="filterByCategory('finance', this)">💰 Finance</div>
+            <div class="pill women"               onclick="filterByCategory('women', this)">👩 Women</div>
+        </div>
+
+        <div class="results-header">
+            <h3 id="results-title">All Schemes</h3>
+            <div class="results-count" id="results-count">Loading...</div>
+        </div>
+
+        <div class="schemes-grid" id="schemes-grid"></div>
+
+    </main>
+
+
+    <footer>
+        ⚠️ This tool is for awareness only.
+        Always verify scheme details at official government portals like india.gov.in or myscheme.gov.in
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
