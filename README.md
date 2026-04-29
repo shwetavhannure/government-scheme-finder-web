@@ -31,9 +31,6 @@ The system organizes schemes into different categories like Education, Agricultu
 ## 📁 Folder Structure
 
 government-scheme-finder
-
-│
-
 ├── index.html  
 ├── style.css  
 ├── script.js  
