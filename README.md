@@ -41,8 +41,3 @@ government-scheme-finder
 
 ---
 
-## 🚀 Deployment
-
-Deployed using GitHub Pages
-
----
